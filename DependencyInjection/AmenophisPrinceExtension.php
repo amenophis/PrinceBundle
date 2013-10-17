@@ -29,12 +29,18 @@ class AmenophisPrinceExtension extends Extension
         foreach ($config['generators'] as $key => $generator) {
             $configDef = new Definition('%amenophis.prince.configuration.class%');
             $configDef->addMethodCall('setConfig', array($generator));
+            $configDef->setPublic(false);
             $container->setDefinition(sprintf('amenophis_prince.%s_configuration', $key), $configDef);
 
             $commandDef = new Definition('%amenophis.prince.command.class%');
             $commandDef->addArgument($config['binary_path']);
             $commandDef->addArgument($configDef);
+            $commandDef->setPublic(false);
             $container->setDefinition(sprintf('amenophis_prince.%s_command', $key), $commandDef);
+
+            $generatorDef = new Definition('%amenophis.prince.generator.class%');
+            $generatorDef->addArgument($commandDef);
+            $container->setDefinition(sprintf('amenophis_prince.%s_generator', $key), $generatorDef);
         }
     }
 }

@@ -1,3 +1,4 @@
 parameters:
     amenophis.prince.configuration.class: Amenophis\Prince\Configuration\Configuration
     amenophis.prince.command.class: Amenophis\Prince\Command\Command
+    amenophis.prince.generator.class: Amenophis\Prince\Generator\Generator
