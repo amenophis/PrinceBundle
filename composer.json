@@ -15,7 +15,7 @@
         "php":                            ">=5.3.3",
 
         "symfony/framework-bundle":       "~2.3",
-        "amenophis/prince-wrapper":       "1.0.*@dev"
+        "amenophis/prince":               "1.0.*@dev"
     },
     "config": {
         "bin-dir": "bin"
