@@ -57,7 +57,7 @@ class Configuration implements ConfigurationInterface
                 ->defaultFalse()
             ->end()
             ->scalarNode('log')
-                ->defaultValue('%kernel.root_dir%/app/logs/prince.log')
+                ->defaultValue('%kernel.root_dir%/logs/prince.log')
             ->end()
         ;
     }
